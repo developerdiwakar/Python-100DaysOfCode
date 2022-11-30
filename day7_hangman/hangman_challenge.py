@@ -22,6 +22,8 @@ lives = 6
 while lives >= 0:
     guess = input("\nGuess a letter: ").lower()
     matched_count = 0
+    if guess in display: 
+        print(f"You have already guessed '{guess}'\n")
     for index in range(word_length):
         letter = choosen_word[index]
         if letter == guess:
@@ -29,6 +31,8 @@ while lives >= 0:
             matched_count += 1            
     print(display)
     if matched_count == 0:
+        print(f"\nYou guessed '{guess}', and that's not in the words. So, you lose a life now only {lives} life left.")
+        print("-------------------------")
         print(stages[lives])
         lives -= 1
     if display.count("_") == 0:
