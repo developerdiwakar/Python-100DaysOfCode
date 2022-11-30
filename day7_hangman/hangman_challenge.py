@@ -1,66 +1,12 @@
 import random
-stages = ['''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========
-''']
+import hangman_art, hangman_words
 
-word_list = [
-    "apple", "baboon", "elephant", "pineapple", "pomegranate", "crocodile", "rhinoceros",
-    "raspberries"
-]
+hangman_logo = hangman_art.logo
+stages = hangman_art.stages
+word_list = hangman_words.word_list
+
+print(f"{hangman_logo}\n\n")
+
 display = []
 # assign random word choosen to a variable
 choosen_word = random.choice(word_list)
