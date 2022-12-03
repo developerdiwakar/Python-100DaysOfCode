@@ -13,6 +13,7 @@ def caesar_cipher(direction, text, shift):
         # on "encode" do nothing
     cipher_text = ""
     for letter in text:
+        # Skip other letter except alphabets
         if letter in alphabet:
             position = alphabet.index(letter)
             # pushed into cipher text list
@@ -28,6 +29,8 @@ while go_again == 'yes':
     direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
     text = input("Type your message:\n").lower()
     shift = int(input("Type the shift number:\n"))
+    # To handle the shift number > total number of alphabets i,e 26
+    shift %= 26 
     # Call the cipher function
     caesar_cipher(direction, text, shift)
 
